@@ -6,8 +6,7 @@ public class Argumentos{
 
         int valor1 = Integer.parseInt(arg1);
         int valor2 = Integer.parseInt(arg2);
-        int n;
-        n = valor1+valor2;
-        System.out.println("soma:" + n);
+
+        System.out.println("soma:" + (valor1+valor2));
     }
 }
