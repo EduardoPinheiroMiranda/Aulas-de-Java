@@ -15,6 +15,7 @@ public class HoraExtra {
         this.horaExtra = horaExtra;
     } 
     private void mostrar(){
-        System.out.println("\nHoras extras acumuladas: "+horaExtra);
+        System.out.println("Horas extras adicionais acumuladas: "+horaExtra);
+        System.out.println("\n");
     }
 }

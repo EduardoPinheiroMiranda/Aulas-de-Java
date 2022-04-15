@@ -1,5 +1,4 @@
 package Classes;
-import Classes.HoraExtra;
 import java.util.Scanner;
 
 public class Funcionario{
@@ -19,7 +18,7 @@ public class Funcionario{
             domingos = input.nextInt();
             
                 for(int i=0; i<domingos;i++){
-                    System.out.println("Quantas horas foram trabalhadas no "+(i+1)+"° domingo?");
+                    System.out.print("Quantas horas foram trabalhadas no "+(i+1)+"° domingo? ");
                     horasT[i] = input.nextDouble();
                 }
 
@@ -52,11 +51,11 @@ public class Funcionario{
     }
 
     private void mostrar(){
-        System.out.println("\nO nome do funcionario é"+nome);
-        System.out.println("O seu cargo é "+cargo);
+        System.out.println("\"nO nome do funcionario é: "+nome);
+        System.out.println("O seu cargo é: "+cargo);
         System.out.println("Horas trabalhadas ao domingos");
             for(int i=0;i<domingos;i++){
-                System.out.println(i+"°: "+horasT[i]);
+                System.out.println("\t"+(i+1)+"°: "+horasT[i]);
             }
     }
 
