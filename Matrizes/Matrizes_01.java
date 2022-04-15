@@ -1,5 +1,3 @@
-package Matrizes;
-
 public class Matrizes_01 {
     public static void main(String[] args){
         String mat[][] = new String [5][5];
