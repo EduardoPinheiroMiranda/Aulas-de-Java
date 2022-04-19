@@ -1,3 +1,4 @@
+package Atividade_01;
 
 public class DATA{
     private int mes;
@@ -27,20 +28,4 @@ public class DATA{
             System.out.println(dia+" / "+mes+" / "+ano);
         } 
 
-    public static void main(String[] args) {
-        DATA data,data1;
-        data = new DATA();
-        data.dia = 12;
-        data.mes = 04;
-        data.ano = 2001;
-
-        data1 = new DATA();
-        data1.dia = 31;
-        data1.mes = 07;
-        data1.ano = 2003;
-
-        data.Displaydata();
-        data1.Displaydata();
-
-    }
 }
