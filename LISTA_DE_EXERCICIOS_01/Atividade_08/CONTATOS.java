@@ -1,12 +1,14 @@
 import java.util.Scanner;
 public class CONTATOS {
     
-    String [][] AgendaFamilia = new String[10][2];
-    
+    String agendaFamilia[][] ={ 
+        {"-", "-"}, {"-", "-"},{"-", "-"},{"-", "-"},{"-", "-"},
+        {"-", "-"}, {"-", "-"},{"-", "-"},{"-", "-"},{"-", "-"} 
+    };
     public CONTATOS(int alt){
         switch(alt){
             case 1:
-                System.out.println("teste");
+                exibirLista();
             break;
             
             case 2:
@@ -24,29 +26,38 @@ public class CONTATOS {
             op = input.nextInt();
 
                 switch(op){
-                    case 1: 
-                            for(int i=0;i<10;i++){
+                    case 1:
+                            for(int i=0;i<3;i++){
                                 for(int j=0;j<2;j++){
-                                    if(AgendaFamilia[i][j] == " "){
+                                    if(agendaFamilia[i][j] == "-" && agendaFamilia[i][j+1]=="-"){
                                         System.out.print("Qual o nome do contato(a) ?");
-                                            AgendaFamilia[i][j]=input.next();  
+                                            agendaFamilia[i][j]=input.next();  
                                         System.out.print("Qual o numero dele(a) ?");
-                                            AgendaFamilia[i][j+2]=input.next();
+                                            agendaFamilia[i][j+1]=input.next();
                                     }
                                 }
                             }
                     break;
                     
-                    case 2:
+                    case 2: 
                             System.out.println("teste");
                     break;
+
+                    default:
+                        System.out.println("erro");
                 }
-
-
-        
-        
-        
-        
+    
     input.close();
+    return ;
+    }
+
+    void exibirLista(){
+        for(int i=0;i<10;i++){
+            for(int j=0;j<2;j++){
+                System.out.println(agendaFamilia[i][j] +" :"+agendaFamilia[i][j+1]);
+                j=3;
+            }
+            System.out.println(" ");
+        }
     }
 }
