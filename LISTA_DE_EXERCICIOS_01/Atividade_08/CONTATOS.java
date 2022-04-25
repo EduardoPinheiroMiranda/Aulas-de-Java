@@ -1,63 +1,110 @@
 import java.util.Scanner;
-public class CONTATOS {
-    
-    String agendaFamilia[][] ={ 
-        {"-", "-"}, {"-", "-"},{"-", "-"},{"-", "-"},{"-", "-"},
-        {"-", "-"}, {"-", "-"},{"-", "-"},{"-", "-"},{"-", "-"} 
-    };
+public class CONTATOS{
+    String  [][] agendaFamilia = new String [3][2];
+    String  [][] agendaTrabalho = new String [3][2];
+    int conti=3, contj=2; 
     public CONTATOS(int alt){
+        if(agendaFamilia[0][0] == null && agendaTrabalho[0][0] == null){
+            CriarMatriz();
+        }
+        
         switch(alt){
             case 1:
-                exibirLista();
+                ExibirAgenda();
             break;
-            
+
             case 2:
-                AdicionarContato();
+                AdicionarContatos();
             break;
+        }
+
+    }
+
+    void CriarMatriz(){
+        for(int i=0;i<conti;i++){
+            for(int j=0;j<contj;j++){
+                agendaFamilia[i][j] = "-";
+                agendaTrabalho[i][j] = "-";
+            }
         }
     }
 
-    void AdicionarContato(){
+    void ExibirAgenda(){
     Scanner input = new Scanner(System.in);
     int op;
 
-        System.out.println("Onde você quer adicionar?");
-        System.out.println("1_Familia\n2_Trabalho");
-            op = input.nextInt();
+        System.out.println("\nQual Agenda deve ser exibida ?\n1_Famailia\t2_Trabalho");
+        op = input.nextInt();
+        input.close();
 
-                switch(op){
-                    case 1:
-                            for(int i=0;i<3;i++){
-                                for(int j=0;j<2;j++){
-                                    if(agendaFamilia[i][j] == "-" && agendaFamilia[i][j+1]=="-"){
-                                        System.out.print("Qual o nome do contato(a) ?");
-                                            agendaFamilia[i][j]=input.next();  
-                                        System.out.print("Qual o numero dele(a) ?");
-                                            agendaFamilia[i][j+1]=input.next();
-                                    }
-                                }
-                            }
-                    break;
-                    
-                    case 2: 
-                            System.out.println("teste");
-                    break;
-
-                    default:
-                        System.out.println("erro");
-                }
-    
-    input.close();
-    return ;
-    }
-
-    void exibirLista(){
-        for(int i=0;i<10;i++){
-            for(int j=0;j<2;j++){
-                System.out.println(agendaFamilia[i][j] +" :"+agendaFamilia[i][j+1]);
-                j=3;
+            switch(op){
+                case 1:
+                    for(int i=0;i<conti;i++){
+                        for(int j=0;j<contj;j++){
+                            System.out.println(this.agendaFamilia[i][j]+": "+ this.agendaFamilia[i][j+1]);
+                            j=contj;
+                        }
+                    }
+                break;
+                case 2:
+                    for(int i=0;i<conti;i++){
+                        for(int j=0;j<contj;j++){
+                            System.out.println(this.agendaTrabalho[i][j]+": "+ this.agendaTrabalho[i][j+1]);
+                            j=contj;
+                        }
+                    }
+                break;
+                default:
+                System.out.println("ERRO, valor inesperado");
             }
-            System.out.println(" ");
-        }
     }
+
+    void AdicionarContatos(){
+    Scanner input = new Scanner(System.in);
+    int op;
+    
+        System.out.println("\nQual agenda você vai adicionar o contato ?\n1_Familia\t2_Trabalho");
+        op = input.nextInt();
+
+            switch(op){
+                case 1:
+                        for(int i=0;i<conti;i++){
+                            for(int j=0;j<contj;j++){
+                                if(agendaFamilia[i][j] == "-" && agendaFamilia[i][j] == "-"){
+                                    System.out.print("Qua o nome do contato ?");
+                                    agendaFamilia[i][j] = input.next();
+                                    System.out.print("Qua o número do contato ?");
+                                    agendaFamilia[i][j+1] = input.next();
+                                    System.out.print("\n");
+                                }
+                                i=conti; j=contj;
+                                AGENDA age = new AGENDA();
+                            }
+                        }
+                        
+                break;
+
+                case 2:
+                        for(int i=0;i<conti;i++){
+                            for(int j=0;j<contj;j++){
+                                if(agendaTrabalho[i][j] == "-" && agendaTrabalho[i][j+2] == "-"){
+                                    System.out.print("Qua o nome do contato ?");
+                                    agendaTrabalho[i][j] = input.next();
+                                    System.out.print("Qua o número do contato ?");
+                                    agendaTrabalho[i][j+1] = input.next();
+                                    System.out.print("\n");
+                                }
+                                i=conti; j=contj;
+                                AGENDA age = new AGENDA();
+                            }
+                        }
+                break;
+
+                default:
+                    System.out.println("ERRO: valor diferente do esperado");
+            }
+
+    input.close();
+    }
+
 }

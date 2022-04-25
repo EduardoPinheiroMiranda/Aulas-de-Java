@@ -1,47 +1,29 @@
 import java.util.Scanner;
 public class AGENDA {
-
+    int alt;
 
     public AGENDA(){
         Scanner input =new Scanner(System.in);
-        int op=1;
-
+        int Op;
             do{
-                System.out.println("Bem vindo a sua agenda!! O que você deseja ?");
-                System.out.println("1_Consultar Agenda\n2_Adicionar contato a agenda\n3_exit");
-                    op = input.nextInt();
-                        if(op==1){
-                            CONTATOS  cont =new CONTATOS(op);
-                        }else if(op==2){
-                            CONTATOS  cont =new CONTATOS(op);
+                System.out.println("O que você deseja ?");
+                System.out.println("1_Consultar Agenda\t2_Adicionar contato a agenda\t3_exit");
+                    Op = input.nextInt();
+                        if(Op==1){
+                            CONTATOS cont = new CONTATOS(Op);
+                        }else if(Op==2){
+                            CONTATOS cont = new CONTATOS(Op);
                         }else{
                             System.out.println("Encerrando programa");
                         }
-            }while(op<2);
+            }while(Op<2);
             
-            
-        input.close();
+    input.close();
     }
 
 
     public static void main(String[] args) {
-    Scanner input =new Scanner(System.in);
-        int op=1;
-
-            do{
-                System.out.println("Bem vindo a sua agenda!! O que você deseja ?");
-                System.out.println("1_Consultar Agenda\n2_Adicionar contato a agenda\n3_exit");
-                    op = input.nextInt();
-                        if(op==1){
-                            CONTATOS  cont =new CONTATOS(op);
-                        }else if(op==2){
-                            CONTATOS  cont =new CONTATOS(op);
-                        }else{
-                            System.out.println("Encerrando programa");
-                        }
-            }while(op<2);
-            
-            
-    input.close();
+        System.out.println("\n\nBem vindo a sua agenda!! O que você deseja ?");
+        AGENDA age = new AGENDA();
     }
 }
