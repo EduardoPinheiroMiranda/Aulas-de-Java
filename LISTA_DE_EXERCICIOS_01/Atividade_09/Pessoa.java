@@ -10,9 +10,8 @@ public class Pessoa{
         System.out.println("Qual a idadeda pessoa?");
         idade = input.nextInt();
 
+        Livro liv = new Livro();
 
-
-    
     input.close();
     }
 
